@@ -1,0 +1,30 @@
+
+
+<div class="container-fluid">
+    <div class="col-12 row mx-0 d-flex justify-content-center align-items-center p-5 h-100">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="d-flex justify-content-center align-items-center">
+            <div class="col-4">
+                <div class="px-4 py-2 m-0 bg">
+                    <span>Admin Login</span>
+                </div>
+                <div class="w-100 border shadow-sm p-4">
+                    <div class="p-0 mb-3">
+                        <input type="text" class="form-control" id="username" formControlName="username" placeholder="name">
+                        <div class="text-danger fz-11 px-1 fw-500 mt-1" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+                            Username is required
+                        </div>
+                    </div>
+                    <div class="p-0 mb-3">
+                       <input type="password" class="form-control" id="password" type="password" formControlName="password"  placeholder="password">
+                       <div  class="text-danger fz-11 px-1 fw-500 mt-1" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                        Password is required
+                      </div>
+                   </div>
+                   <div class="p-0 m-0">
+                       <button type="submit" class="btn py-2 w-100">Submit</button>
+                   </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
