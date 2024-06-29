@@ -10,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class EmployeeCreationComponent implements OnInit {
   creationForm!: FormGroup;
   employeeArray:any[]=[]
+
   constructor(private fb: FormBuilder,
     private router: Router,
     private data:DataService) { 
@@ -24,6 +25,7 @@ export class EmployeeCreationComponent implements OnInit {
     });
   }
 
+  // submit function for employeecreation
   onSubmit(): void {
     if (this.creationForm.valid) {
       alert("Form Submitted Suucessfully")
@@ -37,6 +39,8 @@ export class EmployeeCreationComponent implements OnInit {
       this.employeeDetailsSave(detail)
     }
   }
+
+    // employee detail save function call from data service
 
   employeeDetailsSave(data:any){
      this.data.dataSave(data)

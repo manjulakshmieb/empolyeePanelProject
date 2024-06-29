@@ -18,6 +18,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeArray= JSON.parse(emp)
   }
 
+  // delete function 
 
   delete(index:any){
     this.empService.deleteData(index)
@@ -25,6 +26,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeArray= JSON.parse(emp)
   }
 
+  // search function 
   onSearch() {
     if(this.searchText==''){
       let emp:any = localStorage.getItem('employeeDetails') 
@@ -53,6 +55,8 @@ export class EmployeeListComponent implements OnInit {
     return Math.ceil(this.employeeArray.length / this.itemsPerPage);
   }
   
+  // paginated data get 
+
   get paginatedData() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;

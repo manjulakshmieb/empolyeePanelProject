@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
+  // login submit function
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
